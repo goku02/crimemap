@@ -7,7 +7,7 @@ try:
 	with connection.cursor() as cursor:
 		sql = 'CREATE DATABASE IF NOT EXISTS crimemap'
 		cursor.execute(sql)
-		sql = """CREATE TABLE IF NOT EXISTS crimemap.crime(
+		sql = """CREATE TABLE IF NOT EXISTS crimemap.crimes(
 			id int NOT NULL AUTO_INCREMENT,
 			latitude float(10, 6),
 			longitude float(10, 6),
@@ -18,6 +18,6 @@ try:
 			PRIMARY KEY(id)
 		)"""
 		cursor.execute(sql)
-	connection.commit()
+		connection.commit()
 finally:
 	connection.close()	
